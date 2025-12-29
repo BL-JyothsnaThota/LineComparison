@@ -1,6 +1,6 @@
 package LineComp;
 
-public class Line {
+public class Line implements Comparable<Line> {
 
     private int x1, y1, x2, y2;
 
@@ -25,5 +25,10 @@ public class Line {
 
         Line other = (Line) obj;
         return Double.compare(this.calculateLength(), other.calculateLength()) == 0;
+    }
+    
+    @Override
+    public int compareTo(Line other) {
+        return Double.compare(this.calculateLength(), other.calculateLength());
     }
 }
