@@ -17,4 +17,13 @@ public class Line {
                 Math.pow(y2 - y1, 2)
         );
     }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Line)) return false;
+
+        Line other = (Line) obj;
+        return Double.compare(this.calculateLength(), other.calculateLength()) == 0;
+    }
 }
